@@ -1,11 +1,17 @@
-<div class="contents row">
-  <div class="container">
-    <h3>投稿する</h3>
-    <%= form_with(model: @tweet, local: true) do |form| %>
-      <%= form.text_field :name, placeholder: "Nickname" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%= form.submit "SEND" %>
-    <% end %>
-  </div>
-</div>
+<%= form_with model: @post, local: true do |form| %>
+<%= f.label :image 'iamge' %>
+<%= f.file_field :image %>
+   
+<%= f.hidden_field :post_image_cache %>
+<p><%= form.label :title %><br>
+<%= form.text_field :title %> #titleの入力フォーム生成
+</p>
+
+<p><%= form.label :body %><br>
+<%= form.text_area :body %> #bodyの入力フォーム生成
+</p>
+
+<p><%= form.submit %> #送信ボタンを生成
+</p>
+
+<% end %>
