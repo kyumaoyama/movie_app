@@ -1,4 +1,11 @@
+<%= render "shared/header" %>
 <header class="header">
+<div class='title-contents'>
+    <h1 class='service-title'>
+      映画Times
+    </h1>
+    
+  </div>
 <div class="title">
 <h1 class="logo"> 映画タイトル</h1>
 </div>
@@ -11,9 +18,12 @@
 </ul>
 </div>
 </div>
-<div class="main">
-  <img src="ocean-6860109_1920.jpg" alt="待ってくれ" class="classname">
+
   <div class="rebyu">
-  <h2>感想を書け</h2>
+  <h2>感想を書いてほしな</h2>
   </div>
-</div>
+  <%= link_to(new_posts_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>出品する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+
