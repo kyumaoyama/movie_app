@@ -22,6 +22,29 @@
   <div class="rebyu">
   <h2>感想を書いてほしな</h2>
   </div>
-  <div class='nav'>
+ <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
- </div>
+ 
+  <% @posts.each do |post| %>
+  <%= post.user.nickname %>
+      <li class='list'>
+        <%= link_to post_path(post) do %>
+        <div class='item-img-content'>
+           <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
+        
+        </div>
+        <div class='post-info'>
+          <h3 class='post-name'>
+            <%= post.name %>
+          </h3>
+          <div class='post-price'>
+            <span><%= post.rebyu %><br><%= post.category.name %></span>
+            <div class='star-btn'>
+             </div>
+            
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+       <% end %>
