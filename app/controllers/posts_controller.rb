@@ -20,6 +20,22 @@ class PostsController < ApplicationController
   def show
 
   end
+
+  def edit
+    if @post.user_id == current_user.id 
+    else
+      redirect_to root_path
+    end
+  end 
+
+  def update
+    @post.update(test_params)
+    if @post.valid?
+      redirect_to posts_path(@post)
+  else
+    render 'edit'
+   end
+  end
   private
 
   def test_params
