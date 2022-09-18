@@ -6,29 +6,16 @@
     </h1>
     
   </div>
-<div class="title">
-<h1 class="logo"> 映画タイトル</h1>
-</div>
-</header>
-<div class="side_bar">
-<ul class="list">
-<p> タイタニック</p>
-<p> アベンジャーズ</p>
-<p> ダークナイト</p>
-</ul>
-</div>
-</div>
 
-  <div class="rebyu">
-  <h2>感想を書いてほしな</h2>
-  </div>
+
+  
  <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
  
   <% @posts.each do |post| %>
   <%= post.user.nickname %>
       <li class='list'>
-        <%= link_to post_path(post) do %>
+        <%= link_to post_path(post.id) do %>
         <div class='item-img-content'>
            <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
         
@@ -41,10 +28,32 @@
             <span><%= post.rebyu %><br><%= post.category.name %></span>
             <div class='star-btn'>
              </div>
-            
+            <li>
+            <%= link_to 'コメント', post_path(post.id), method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(post.id), method: :delete %>
+            </li>
+          <% end %>
             </div>
           </div>
         </div>
         <% end %>
       </li>
        <% end %>
+        <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <span><%= current_user.nickname %>
+            <ul class="user__info">
+              <li>
+                 <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
+              
+              </li>
+            </ul>
+          </span>
+       
+      <% end %>

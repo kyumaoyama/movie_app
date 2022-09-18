@@ -1,0 +1,30 @@
+  
+  <%= @post.user.nickname %>
+      <li class='list'>
+        
+        <div class='item-img-content'>
+           <%= image_tag @post.image.variant(resize: '500x500'), class: "post-img" if @post.image.attached? %>
+        
+        </div>
+        <div class='post-info'>
+          <h3 class='post-name'>
+            <%= @post.name %>
+          </h3>
+          <div class='post-price'>
+            <span><%= @post.rebyu %><br><%= @post.category.name %></span>
+            <div class='star-btn'>
+             </div>
+              </div>
+              </div>
+             
+             
+ <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+     </div>
