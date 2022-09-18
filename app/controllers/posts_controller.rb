@@ -31,10 +31,19 @@ class PostsController < ApplicationController
   def update
     @post.update(test_params)
     if @post.valid?
-      redirect_to posts_path(@post)
+      redirect_to root_path(@post)
   else
     render 'edit'
    end
+  end
+
+  def destroy
+    if @post.user_id == current_user.id
+      @post.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path 
+    end
   end
   private
 
