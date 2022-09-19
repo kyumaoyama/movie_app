@@ -1,3 +1,4 @@
+
 <% if @user.avatar? %>
   <%= image_tag @user.avatar.url %>
 <% else %>
@@ -40,3 +41,7 @@
         <% end %>
       </li>
        <% end %>
+
+
+  <p><%= @nickname %>さんの投稿一覧</p>
+
