@@ -19,3 +19,9 @@
              </div>
   <% end %>
 </div>
+<% if @user.avatar? %>
+  <%= image_tag @user.avatar.url %>
+<% else %>
+  <%= image_tag ("noavatar.png") %>
+<% end %>
+
