@@ -34,8 +34,10 @@
         <p>
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.text %>
+           <% if user_signed_in? && current_user.id == comment.user_id %>
           <p><%=link_to "削除", comment_path(comment.id), method: :delete %></p>
         </p>
+         <% end %>
       <% end %>
     </div>
      </div>
