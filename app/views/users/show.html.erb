@@ -1,9 +1,17 @@
+<% if @user.avatar? %>
+  <%= image_tag @user.avatar.url %>
+<% else %>
+  <%= image_tag ("noavatar.png") %>
+<% end %>
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
-  <% @posts.each do |post| %>
   
-    <li class='list'>
-     
+
+
+<% @posts.each do |post| %>
+
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
         <div class='item-img-content'>
            <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
         
@@ -12,16 +20,23 @@
           <h3 class='post-name'>
             <%= post.name %>
           </h3>
-    </div>
-     <div class='post-price'>
+          <div class='post-price'>
             <span><%= post.rebyu %><br><%= post.category.name %></span>
             <div class='star-btn'>
              </div>
-  <% end %>
-</div>
-<% if @user.avatar? %>
-  <%= image_tag @user.avatar.url %>
-<% else %>
-  <%= image_tag ("noavatar.png") %>
-<% end %>
-
+           
+          </li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(post.id), method: :delete %>
+            </li>
+          <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+       <% end %>
