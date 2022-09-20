@@ -4,14 +4,16 @@
     <h1 class='service-title'>
       映画Times
     </h1>
-    <ul class="user__info">
+    
+  </div>
+  <ul class="user__info">
+  <% if user_signed_in? %>
               <li>
                  <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
               
               </li>
             </ul>
-  </div>
-
+<%end%>
 
   
  <div class='item-contents'>
