@@ -11,9 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2022_09_19_050845) do
+ActiveRecord::Schema.define(version: 2022_09_20_000533) do
 
-ActiveRecord::Schema.define(version: 2022_09_18_043335) do
+
+
+
+
+
 
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,6 +45,13 @@ ActiveRecord::Schema.define(version: 2022_09_18_043335) do
     t.integer "user_id"
     t.integer "post_id"
     t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

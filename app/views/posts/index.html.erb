@@ -16,7 +16,11 @@
   <% if user_signed_in? %>
         <div class="user_nav grid-6">
 
+         
+
+
           <span><%= current_user.nickname %>
+
 
             <ul class="user__info">
               <li>
@@ -27,6 +31,7 @@
           </span>
        
       <% end %>
+      
   <% @posts.each do |post| %>
   <%= post.user.nickname %>
       <li class='list'>

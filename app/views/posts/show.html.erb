@@ -6,6 +6,17 @@
            <%= image_tag @post.image.variant(resize: '500x500'), class: "post-img" if @post.image.attached? %>
         
         </div>
+        <% if @post.favorited?(current_user) %>
+    # 一致するレコードが存在する＝すでにいいね済みの場合はdestroyアクションへ
+    <%= link_to post_favorites_path(@post.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <% end %>
+<% else %>
+    # 一致するレコードが存在しない＝まだいいねしていない場合はcreateアクションへ
+    <%= link_to post_favorites_path(@post.id), method: :post do %>
+        <span>❤︎</span>
+    <% end %>
+<% end %>
         <div class='post-info'>
           <h3 class='post-name'>
             <%= @post.name %>
@@ -17,7 +28,7 @@
               </div>
               </div>
              
-             
+   
  <div class="container">
     <% if user_signed_in? %>
       <%= form_with(model: [@post,@comment], local: true) do |form| %>

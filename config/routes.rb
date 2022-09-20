@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts do
   resources :comments, only: [:create]
+  resource :favorites, only: [:create, :destroy]
   end
 
   resources :users, only:[:index, :show, :edit, :update,:create,:new]
