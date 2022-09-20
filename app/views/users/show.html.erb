@@ -1,0 +1,17 @@
+
+<% if @user.avatar? %>
+  <%= image_tag @user.avatar.url %>
+<% else %>
+  <%= image_tag ("noavatar.png") %>
+<% end %>
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  
+
+
+
+     <<%= render 'posts/form' %>
+
+
+
+
