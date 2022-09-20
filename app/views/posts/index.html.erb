@@ -1,7 +1,5 @@
 <%= render "shared/header" %>
 <header class="header">
-
-
 <div class='title-contents'>
     <h1 class='service-title'>
       映画Times
@@ -13,24 +11,13 @@
   
  <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
-  <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-
-         
-
-
-          <span><%= current_user.nickname %>
-
-
+  
             <ul class="user__info">
               <li>
                  <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
               
               </li>
             </ul>
-          </span>
-       
-      <% end %>
       
   <% @posts.each do |post| %>
   <%= post.user.nickname %>
@@ -40,6 +27,20 @@
            <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
         
         </div>
+        <td>
+          <div id="star-rate<%= post.id%>"> </td>
+          <script>
+            $('#star-rate<%= post.id %>').empty();
+            $('#star-rate<%= post.id%>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              half      : false,
+              readOnly: true,
+              score: <%= post.star %>,
+            });
+          </script>
+          </div>    
         <div class='post-info'>
           <h3 class='post-name'>
             <%= post.name %>
@@ -51,12 +52,22 @@
             <li>
             <%= link_to 'コメント', post_path(post.id), method: :get %>
           </li>
-  
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(post.id), method: :delete %>
+            </li>
+          <% end %>
             </div>
           </div>
         </div>
         <% end %>
       </li>
        <% end %>
-
+        <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+         
        
+      <% end %>

@@ -27,6 +27,19 @@
         <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
 <p><%= form.submit %> #送信ボタンを生成
 </p>
-
+  <div class="form-group row" id="star">
+    <%= form.label :star,'評価 ', class:'col-md-3 col-form-label' %>
+    <%= form.hidden_field :star, id: :review_star %>
+    </div>
+  <script>
+    $('#star').empty();
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    scoreName: 'post[star]',
+    half: false,
+  });
+  </script>
  
 <% end %>
