@@ -45,15 +45,3 @@
         <% end %>
       </li>
        <% end %>
-        <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                 <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
-              
-              </li>
-            </ul>
-          </span>
-       
-      <% end %>

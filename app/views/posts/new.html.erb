@@ -25,7 +25,6 @@
           <span class="indispensable">必須</span>
         </div>
         <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
-<p><%= form.submit %> #送信ボタンを生成
 </p>
   <div class="form-group row" id="star">
     <%= form.label :star,'評価 ', class:'col-md-3 col-form-label' %>
@@ -41,5 +40,6 @@
     half: false,
   });
   </script>
+<p><%= form.submit %> #送信ボタンを生成
  
 <% end %>
