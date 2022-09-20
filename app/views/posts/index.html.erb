@@ -13,7 +13,7 @@
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
   <% if user_signed_in? %>
         <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
+         
             <ul class="user__info">
               <li>
                  <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
@@ -23,6 +23,7 @@
           </span>
        
       <% end %>
+      
   <% @posts.each do |post| %>
   <%= post.user.nickname %>
       <li class='list'>
