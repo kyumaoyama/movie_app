@@ -58,4 +58,4 @@ gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'carrierwave'
 gem 'active_hash'
-
+gem 'themoviedb-api', '~> 1.3'

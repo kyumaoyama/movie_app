@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_item,only:[:edit,:show,:update,:destroy]
+
+  require 'themoviedb-api'
+  Tmdb::Api.key("eb2dd0970b954a497a1148742c3127fa")
+  Tmdb::Api.language("ja")
+
   def index
     @posts = Post.includes(:user).order("created_at DESC")
     
