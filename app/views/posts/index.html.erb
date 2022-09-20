@@ -4,7 +4,12 @@
     <h1 class='service-title'>
       映画Times
     </h1>
-    
+    <ul class="user__info">
+              <li>
+                 <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
+              
+              </li>
+            </ul>
   </div>
 
 
@@ -12,10 +17,5 @@
  <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
   
-            <ul class="user__info">
-              <li>
-                 <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
-              
-              </li>
-            </ul>
-       <<%= render 'posts/form' %>
+            
+       <%= render 'posts/form' %>
