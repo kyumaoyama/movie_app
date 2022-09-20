@@ -9,38 +9,8 @@
   
 
 
-<% @posts.each do |post| %>
 
-      <li class='list'>
-        <%= link_to post_path(post.id) do %>
-        <div class='item-img-content'>
-           <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
-        
-        </div>
-        <div class='post-info'>
-          <h3 class='post-name'>
-            <%= post.name %>
-          </h3>
-          <div class='post-price'>
-            <span><%= post.rebyu %><br><%= post.category.name %></span>
-            <div class='star-btn'>
-             </div>
-           
-          </li>
-          <% if user_signed_in? && current_user.id == post.user_id %>
-            <li>
-              <%= link_to '編集', edit_post_path(post.id), method: :get %>
-            </li>
-            <li>
-              <%= link_to '削除', post_path(post.id), method: :delete %>
-            </li>
-          <% end %>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
-       <% end %>
+     <<%= render 'posts/form' %>
 
 
 
