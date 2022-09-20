@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_item,only:[:edit,:show,:update,:destroy]
   def index
     @posts = Post.includes(:user).order("created_at DESC")
+    
   end
 
   def new
@@ -18,7 +19,8 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def edit
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def test_params
-    params.require(:post).permit(:text, :image,:category_id,:name,:rebyu).merge(user_id: current_user.id)
+    params.require(:post).permit(:image,:category_id,:name,:rebyu).merge(user_id: current_user.id)
   end
 
   def set_item
