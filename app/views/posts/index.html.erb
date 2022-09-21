@@ -18,6 +18,6 @@
   
  <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
-  
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
             
        <%= render 'posts/form' %>
