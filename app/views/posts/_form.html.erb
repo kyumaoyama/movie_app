@@ -1,11 +1,12 @@
+<div class="postmain">
 <% @posts.each do |post| %>
   <%= post.user.nickname %>
       <li class='list'>
         <%= link_to post_path(post.id) do %>
         <div class='item-img-content'>
            <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
-        
         </div>
+        
         <td>
           <div id="star-rate<%= post.id%>"> </td>
           <script>
@@ -25,7 +26,8 @@
             <%= post.name %>
           </h3>
           <div class='post-price'>
-            <span><%= post.rebyu %><br><%= post.category.name %></span>
+          
+            <span><%= post.rebyu %><br><p>映画ジャンル</p><%= post.category.name %></span>
             <div class='star-btn'>
              </div>
             <li>
@@ -45,3 +47,4 @@
         <% end %>
       </li>
        <% end %>
+</div>

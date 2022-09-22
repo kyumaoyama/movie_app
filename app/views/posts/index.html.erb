@@ -4,20 +4,13 @@
     <h1 class='service-title'>
       映画Times
     </h1>
-    
-  </div>
-  <ul class="user__info">
-  <% if user_signed_in? %>
-              <li>
-                 <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div> 
-              
-              </li>
-            </ul>
-<%end%>
-
+      </div>
+  
+</header>
   
  <div class='item-contents'>
 <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
   <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
             
        <%= render 'posts/form' %>
+       </div>

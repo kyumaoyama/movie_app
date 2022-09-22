@@ -1,22 +1,68 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+  background-color:#000000;
+  
+}
+
+.acout{
+  background-color:#FF6600;
+
+ 
+  height: 100px;
+  
+}
+
+
+
+ .user__info{
+  list-style: none;
+ justify-content: flex-end;
+ display: flex;
+ font-size: 30px
+ 
+}
+.user-nickname{
+  padding-right: 30px;
+}
+.text-white{
+  padding-right: 30px;
+}
+
+.logout{
+  padding-right: 30px;
+}
+
+.login{
+  padding-right: 30px;
+}
+.sign-up{
+  padding-right: 30px;
+}
+
+
 a {
   text-decoration: none;
+}
+
+.postmain{
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .main {
   background: #f8f8f8;
 }
 .title-contents {
-  width: 100vw;
-  background-image: image-url('furima-header01.png');
-  background-size: cover;
+  
+  
   background-repeat: no-repeat;
   background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  
+  align-items: center;
   justify-content: center;
   padding: 5px 15px;
   color: #FF6600;
@@ -24,6 +70,8 @@ a {
 }
 .service-title {
   font-size: 100px;
+  justify-content: center;
+  padding: 5px 15px;
 }
 
 
