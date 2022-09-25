@@ -1,8 +1,14 @@
- <div class="acout" >
- <% if user_signed_in? %>
- <ul class="user__info">
+
+ 
+ 
+ 
+ <div class="pot" >
+ <li><%= link_to "映画投稿", new_post_path, class:  'purchase-btn' %></li>
+     
+      <% if user_signed_in? %>
+      
       <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname"  %></li>
-        <li>  <div><%= link_to "マイページ", user_path(current_user.id), class: "text-white" %></div>        
+        <li>  <%= link_to "マイページ", user_path(current_user.id), class: "text-white" %>       
               </li>
        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"  %></li>
        <% else %>

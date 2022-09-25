@@ -1,5 +1,6 @@
-<div class="postmain">
+
 <% @posts.each do |post| %>
+ <div class='item-contents'>
   <%= post.user.nickname %>
       <li class='list'>
         <%= link_to post_path(post.id) do %>
