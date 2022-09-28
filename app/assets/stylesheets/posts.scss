@@ -1,22 +1,87 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+  background-color:#000000;
+  
+}
+.purchase-btn{
+  padding-right: 270px;
+  font-size: 70px;
+}
+.acout{
+  background-color:#FF6600;
+  list-style: none;
+ 
+  height: 100px;
+  
+}
+.pot{
+  list-style: none;
+  background-color: aqua;
+  display: flex;
+}
+
+
+ .user__info{
+  list-style: none;
+ justify-content: flex-end;
+ display: flex;
+
+ height: 100%;
+
+}
+li{}
+.user-nickname{
+  padding: 20px;
+  color: #f8f8f8;
+  padding-top: 30px;
+  padding-top: 30px;
+}
+.text-white{
+  padding: 20px;
+  color: #f8f8f8;
+}
+
+.logout{
+  padding: 20px;
+  color: #f8f8f8;
+}
+
+.login{
+  padding: 20px;
+  color: #f8f8f8;
+}
+.sign-up{
+  padding: 20px;
+  color: #f8f8f8;
+}
+
+
 a {
   text-decoration: none;
 }
 
+.postmain .list {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.list {
+
+}
 .main {
   background: #f8f8f8;
 }
 .title-contents {
-  width: 100vw;
-  background-image: image-url('furima-header01.png');
-  background-size: cover;
+  
+  
   background-repeat: no-repeat;
   background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  
+  align-items: center;
   justify-content: center;
   padding: 5px 15px;
   color: #FF6600;
@@ -24,6 +89,8 @@ a {
 }
 .service-title {
   font-size: 100px;
+  justify-content: center;
+  padding: 5px 15px;
 }
 
 
@@ -43,4 +110,61 @@ a {
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
   background-size: 100% 100%;
+}
+.item-contents {
+  background-color: #FF6600;
+}
+.img-upload{
+  font-size: 40px;
+    text-align: center;
+    background-color: coral;
+}
+#post-image{
+  font-size: 30px;
+
+}
+.movie_title{
+background-color: aqua;
+    text-align: center;
+    font-size: 30px;
+}
+.rebyu{
+  background-color: crimson;
+    font-size: 50px;
+    text-align: center;
+}
+#post_rebyu{
+  background-color: antiquewhite;
+    width: 70%;
+}
+.weight-bold-text{
+  background-color: bisque;
+    font-size: 30px;
+    text-align: center;
+}
+.select-box{
+  width: 70%;
+    height: 40px;
+}
+#star{
+  cursor: pointer;
+  text-align: center;
+  background-color: black;
+}
+.btun{
+  background-color: aquamarine;
+  
+  
+  height: 50px;
+  display: flex;
+  
+  justify-content: center;
+  padding: 100px;
+}
+input[type="submit" i] {
+  height: 100px;
+  width: 100%;
+}
+.purchase-btn{
+  color: #FF0066;
 }

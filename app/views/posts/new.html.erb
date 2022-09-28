@@ -12,21 +12,36 @@
       </div>
     </div>
   
-
-<p><%= form.label :映画のタイトル入力 %><br>
+<div class="movie_title">
+<%= form.label :映画のタイトル入力 %><br>
 <%= form.text_field :name %> 
-</p>
 
-<p><%= form.label :レビューを書いてください %><br>
+</div>
+<div class="rebyu"><%= form.label :レビューを書いてください %><br>
 <%= form.text_area :rebyu %> 
-</p>
+</div>
 <div class="weight-bold-text">
           映画のジャンルを選んでください
           <span class="indispensable">必須</span>
-        </div>
+       
         <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"post-category"}) %>
-<p><%= form.submit %> #送信ボタンを生成
-</p>
 
- 
+</div>
+  <div class="form-group row" id="star">
+    <%= form.label :star,'評価 ', class:'col-md-3 col-form-label' %>
+    <%= form.hidden_field :star, id: :review_star %>
+    </div>
+  <script>
+    $('#star').empty();
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    scoreName: 'post[star]',
+    half: false,
+  });
+  </script>
+  <div class="btun">
+<%= form.submit %> 
+ </div>
 <% end %>

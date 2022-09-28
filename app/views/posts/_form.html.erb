@@ -1,5 +1,51 @@
-<%= form_with(model: tweet, local: true) do |form| %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%= form.submit "SEND" %>
-    <% end %>
+
+<% @posts.each do |post| %>
+ <div class='item-contents'>
+  <%= post.user.nickname %>
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='item-img-content'>
+           <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
+        </div>
+        
+        <td>
+          <div id="star-rate<%= post.id%>"> </td>
+          <script>
+            $('#star-rate<%= post.id %>').empty();
+            $('#star-rate<%= post.id%>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              half      : false,
+              readOnly: true,
+              score: <%= post.star %>,
+            });
+          </script>
+          </div>    
+        <div class='post-info'>
+          <h3 class='post-name'>
+            <%= post.name %>
+          </h3>
+          <div class='post-price'>
+          
+            <span><%= post.rebyu %><br><p>映画ジャンル</p><%= post.category.name %></span>
+            <div class='star-btn'>
+             </div>
+            <li>
+            <%= link_to 'コメント', post_path(post.id), method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(post.id), method: :delete %>
+            </li>
+          <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+       <% end %>
+</div>
