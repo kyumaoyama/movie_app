@@ -7,7 +7,7 @@
   
 }
 .purchase-btn{
-  padding-right: 270px;
+  padding-right: 500px;
   font-size: 70px;
 }
 .acout{
@@ -17,31 +17,52 @@
   height: 100px;
   
 }
+
+.service-title{
+width: 30%;
+
+}
 .pot{
+  align-items: center;
   list-style: none;
-  background-color: aqua;
-  display: flex;
-  height: 100px;
-}
-
-.menu li{
-  list-style: none;
-}
-
-
-a {
-  text-decoration: none;
-}
-
-.postmain .list {
+  background-color: #000033;
   display: flex;
   justify-content: space-around;
+  height: 150px;
+  width: 100%;
+  
+}
+
+.pot h1{
+  font-size: 80px;
+  color: #0000FF;
+}
+.pot h2{
+  font-size: 60px;
+}
+h2 a{
+  text-decoration: none;
+  color: #FF0066;
+}
+.menu li{
+  list-style: none;
   padding-right: 20px;
+  font-size: 30px;
 }
 
-.list {
 
+.menu a {
+  text-decoration: none;
+ color: #00FF33;
 }
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  
+  
+}
+
 .main {
   background: #f8f8f8;
 }
@@ -58,9 +79,8 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 .service-title {
-  font-size: 100px;
-  justify-content: center;
-  padding: 5px 15px;
+  
+  
 }
 
 
