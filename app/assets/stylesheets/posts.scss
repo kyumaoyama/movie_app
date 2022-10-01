@@ -21,41 +21,11 @@
   list-style: none;
   background-color: aqua;
   display: flex;
+  height: 100px;
 }
 
-
- .user__info{
+.menu li{
   list-style: none;
- justify-content: flex-end;
- display: flex;
-
- height: 100%;
-
-}
-li{}
-.user-nickname{
-  padding: 20px;
-  color: #f8f8f8;
-  padding-top: 30px;
-  padding-top: 30px;
-}
-.text-white{
-  padding: 20px;
-  color: #f8f8f8;
-}
-
-.logout{
-  padding: 20px;
-  color: #f8f8f8;
-}
-
-.login{
-  padding: 20px;
-  color: #f8f8f8;
-}
-.sign-up{
-  padding: 20px;
-  color: #f8f8f8;
 }
 
 
@@ -66,7 +36,7 @@ a {
 .postmain .list {
   display: flex;
   justify-content: space-around;
-
+  padding-right: 20px;
 }
 
 .list {
