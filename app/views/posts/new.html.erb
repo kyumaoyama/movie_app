@@ -1,3 +1,5 @@
+ <div class="new-main">
+ 
  <div class="img-upload">
 <%= form_with model: @post, local: true do |form| %>
       <div class="weight-bold-text">
@@ -8,7 +10,7 @@
         <p>
           クリックして画像をアップロード
         </p>
-        <%= form.file_field :image, id:"post-image" %>
+    <%= form.file_field :image, id:"post-image" %>
       </div>
     </div>
   
@@ -47,3 +49,4 @@
 <%= form.submit %> 
  </div>
 <% end %>
+</div>

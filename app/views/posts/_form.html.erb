@@ -1,15 +1,18 @@
 
+  <div class="main">
+ 
 <% @posts.each do |post| %>
- <div class='item-contents'>
+<div class='item-contents'>
+<div class="col-md-4">
+ <li class='list'>
   <%= post.user.nickname %>
-      <li class='list'>
         <%= link_to post_path(post.id) do %>
         <div class='item-img-content'>
            <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" if post.image.attached? %>
         </div>
         
-        <td>
-          <div id="star-rate<%= post.id%>"> </td>
+        
+          <div id="star-rate<%= post.id%>"> 
           <script>
             $('#star-rate<%= post.id %>').empty();
             $('#star-rate<%= post.id%>').raty({
@@ -47,5 +50,7 @@
         </div>
         <% end %>
       </li>
+      </div>
+        </div>
        <% end %>
-</div>
+     

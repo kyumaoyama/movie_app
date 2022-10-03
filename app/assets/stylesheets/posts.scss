@@ -19,7 +19,7 @@
 }
 
 .service-title{
-width: 30%;
+width: 40%;
 
 }
 .pot{
@@ -34,8 +34,9 @@ width: 30%;
 }
 
 .pot h1{
-  font-size: 80px;
+  font-size: 106px;
   color: #0000FF;
+  font-weight: 900;
 }
 .pot h2{
   font-size: 60px;
@@ -104,19 +105,43 @@ h2 a{
 .item-contents {
   background-color: #FF6600;
 }
+
+.new-main{}
+
+
+
 .img-upload{
   font-size: 40px;
     text-align: center;
     background-color: coral;
+    height: 100px;
+}
+
+.click-upload{
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.weight-bold-text{
+  width: 10%;
 }
 #post-image{
-  font-size: 30px;
+  font-size: 20px;
 
 }
 .movie_title{
 background-color: aqua;
     text-align: center;
     font-size: 30px;
+}
+label{
+  background-color: #FF0066;
+}
+input[type="text" i] {
+  font-size: 30px;
 }
 .rebyu{
   background-color: crimson;
@@ -131,6 +156,7 @@ background-color: aqua;
   background-color: bisque;
     font-size: 30px;
     text-align: center;
+    display: inline;
 }
 .select-box{
   width: 70%;
